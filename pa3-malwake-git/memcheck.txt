@@ -1,0 +1,143 @@
+==3483== Memcheck, a memory error detector
+==3483== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3483== Using Valgrind-3.16.1-36d6727e1d-20200622X and LibVEX; rerun with -h for copyright info
+==3483== Command: ./pa3 7 PA3_Examples/Bacillus_cereus.txt output5 outputp5
+==3483== Parent PID: 3482
+==3483== 
+--3483-- 
+--3483-- Valgrind options:
+--3483--    --tool=memcheck
+--3483--    --verbose
+--3483--    --log-file=memcheck.txt
+--3483--    --leak-check=full
+--3483-- Contents of /proc/version:
+--3483--   Linux version 5.7.0-kali1-amd64 (devel@kali.org) (gcc version 9.3.0 (Debian 9.3.0-14), GNU ld (GNU Binutils for Debian) 2.34) #1 SMP Debian 5.7.6-1kali2 (2020-07-01)
+--3483-- 
+--3483-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-ssse3-avx
+--3483-- Page sizes: currently 4096, max supported 4096
+--3483-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--3483-- Reading syms from /home/kali/Desktop/ECE368/pa3-malwake-git/pa3
+--3483-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--3483--   Considering /usr/lib/debug/.build-id/32/438eb3b034da54caf58c7a65446639f7cfe274.debug ..
+--3483--   .. build-id is valid
+--3483-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--3483--   Considering /usr/lib/debug/.build-id/54/299c4aec0e5e5f3d7b8135341351d0e1dbfc64.debug ..
+--3483--   .. build-id is valid
+--3483--    object doesn't have a dynamic symbol table
+--3483-- Scheduler: using generic scheduler lock implementation.
+--3483-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==3483== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-3483-by-kali-on-???
+==3483== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-3483-by-kali-on-???
+==3483== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-3483-by-kali-on-???
+==3483== 
+==3483== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==3483== don't want to do, unless you know exactly what you're doing,
+==3483== or are doing some strange experiment):
+==3483==   /usr/bin/vgdb --pid=3483 ...command...
+==3483== 
+==3483== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==3483==   /path/to/gdb ./pa3
+==3483== and then give GDB the following command
+==3483==   target remote | /usr/bin/vgdb --pid=3483
+==3483== --pid is optional if only one valgrind process is running
+==3483== 
+--3483-- REDIR: 0x401f970 (ld-linux-x86-64.so.2:strlen) redirected to 0x580ca5f2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--3483-- REDIR: 0x401f750 (ld-linux-x86-64.so.2:index) redirected to 0x580ca60c (vgPlain_amd64_linux_REDIR_FOR_index)
+--3483-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--3483--   Considering /usr/lib/debug/.build-id/f2/7641e081d3c37b410d7f31da4e2bf21040f356.debug ..
+--3483--   .. build-id is valid
+--3483-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--3483--   Considering /usr/lib/debug/.build-id/25/7cdcdf80e04f91ca9e3b185ee3b52995e89946.debug ..
+--3483--   .. build-id is valid
+==3483== WARNING: new redirection conflicts with existing -- ignoring it
+--3483--     old: 0x0401f970 (strlen              ) R-> (0000.0) 0x580ca5f2 vgPlain_amd64_linux_REDIR_FOR_strlen
+--3483--     new: 0x0401f970 (strlen              ) R-> (2007.0) 0x0483bda0 strlen
+--3483-- REDIR: 0x401c190 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483cc90 (strcmp)
+--3483-- REDIR: 0x401feb0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4840740 (mempcpy)
+--3483-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--3483--   Considering /usr/lib/debug/.build-id/ec/3a1edbb04c6c2376a0f382429383cb2dfc350e.debug ..
+--3483--   .. build-id is valid
+--3483-- REDIR: 0x48ecea0 (libc.so.6:memmove) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec250 (libc.so.6:strncpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed1c0 (libc.so.6:strcasecmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ebb70 (libc.so.6:strcat) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec2b0 (libc.so.6:rindex) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ee550 (libc.so.6:rawmemchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x4906710 (libc.so.6:wmemchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x49062b0 (libc.so.6:wcscmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed000 (libc.so.6:mempcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ece30 (libc.so.6:bcmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec1f0 (libc.so.6:strncmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ebc20 (libc.so.6:strcmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ecf60 (libc.so.6:memset) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x4906270 (libc.so.6:wcschr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec150 (libc.so.6:strnlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ebcf0 (libc.so.6:strcspn) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed210 (libc.so.6:strncasecmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ebc90 (libc.so.6:strcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed360 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x4907910 (libc.so.6:wcsnlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x49062f0 (libc.so.6:wcscpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec2f0 (libc.so.6:strpbrk) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ebbd0 (libc.so.6:index) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec110 (libc.so.6:strlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48f28b0 (libc.so.6:memrchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed260 (libc.so.6:strcasecmp_l) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ecdf0 (libc.so.6:memchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x4906390 (libc.so.6:wcslen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ec590 (libc.so.6:strspn) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed160 (libc.so.6:stpncpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed100 (libc.so.6:stpcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ee590 (libc.so.6:strchrnul) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48ed2b0 (libc.so.6:strncasecmp_l) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--3483-- REDIR: 0x48fb530 (libc.so.6:__strrchr_sse2) redirected to 0x483b7f0 (__strrchr_sse2)
+--3483-- REDIR: 0x48e80f0 (libc.so.6:malloc) redirected to 0x4838710 (malloc)
+--3483-- REDIR: 0x48eca30 (libc.so.6:__GI_strstr) redirected to 0x4840990 (__strstr_sse2)
+--3483-- REDIR: 0x48e8720 (libc.so.6:free) redirected to 0x4839940 (free)
+--3483-- REDIR: 0x48f5b70 (libc.so.6:__memchr_sse2) redirected to 0x483cd10 (memchr)
+--3483-- REDIR: 0x4905660 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x483cda0 (memcpy@GLIBC_2.2.5)
+--3483-- REDIR: 0x4900d70 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x483c270 (__strncpy_sse2_unaligned)
+--3483-- REDIR: 0x48f4070 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x483cb90 (strcmp)
+--3483-- REDIR: 0x48fb320 (libc.so.6:__strchrnul_sse2) redirected to 0x48402b0 (strchrnul)
+--3483-- REDIR: 0x48fb820 (libc.so.6:__strlen_sse2) redirected to 0x483bce0 (__strlen_sse2)
+--3483-- REDIR: 0x4905640 (libc.so.6:__mempcpy_sse2_unaligned) redirected to 0x48403c0 (mempcpy)
+==3483== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==3483== 
+==3483== Process terminating with default action of signal 11 (SIGSEGV)
+==3483==  Access not within mapped region at address 0x1FFE801FF8
+==3483== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==3483==    at 0x48DA962: fputc (fputc.c:32)
+==3483==  If you believe this happened as a result of a stack
+==3483==  overflow in your program's main thread (unlikely but
+==3483==  possible), you can try to increase the size of the
+==3483==  main thread stack using the --main-stacksize= flag.
+==3483==  The main thread stack size used in this run was 8388608.
+==3483== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==3483== 
+==3483== Process terminating with default action of signal 11 (SIGSEGV)
+==3483==  Access not within mapped region at address 0x1FFE801FF0
+==3483== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==3483==    at 0x482E110: _vgnU_freeres (vg_preloaded.c:57)
+==3483==  If you believe this happened as a result of a stack
+==3483==  overflow in your program's main thread (unlikely but
+==3483==  possible), you can try to increase the size of the
+==3483==  main thread stack using the --main-stacksize= flag.
+==3483==  The main thread stack size used in this run was 8388608.
+==3483== 
+==3483== HEAP SUMMARY:
+==3483==     in use at exit: 2,363,864 bytes in 16,387 blocks
+==3483==   total heap usage: 16,397 allocs, 10 frees, 2,377,692 bytes allocated
+==3483== 
+==3483== Searching for pointers to 16,387 not-freed blocks
+==3483== Checked 7,936,360 bytes
+==3483== 
+==3483== LEAK SUMMARY:
+==3483==    definitely lost: 0 bytes in 0 blocks
+==3483==    indirectly lost: 0 bytes in 0 blocks
+==3483==      possibly lost: 0 bytes in 0 blocks
+==3483==    still reachable: 2,363,864 bytes in 16,387 blocks
+==3483==         suppressed: 0 bytes in 0 blocks
+==3483== Reachable blocks (those to which a pointer was found) are not shown.
+==3483== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3483== 
+==3483== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

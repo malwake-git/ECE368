@@ -1,3 +1,3 @@
 # ECE368
 
-ECE 368 Summer 2021
+ECE 36800 - Data Structures Summer 2021

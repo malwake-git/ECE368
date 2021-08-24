@@ -1,0 +1,37 @@
+#ifndef TREE_H
+#define TREE_H
+
+typedef struct tnode
+{
+  int ind;
+  double value;
+  double value2;
+  double t;
+  
+  struct tnode * left;
+  struct tnode * right;
+} TreeNode;
+
+typedef struct trnode
+{
+  TreeNode * root;
+} Tree;
+
+int empty(TreeNode *tr);
+//TreeNode *create ( TreeNode *left, TreeNode *right);
+TreeNode *create (TreeNode *left, TreeNode *right, int ind, double value, double value2);
+int Info (TreeNode *Node);
+TreeNode *Left_child (TreeNode *tr);
+TreeNode *Right_child (TreeNode *tr);
+void freeTree(Tree * tr);
+void preOrder(Tree * tr, char * filename);
+Tree * buildTree(int * inArray, int * postArray, int size);
+void deleteTreeNode(TreeNode * tr);
+void preOrderNode(TreeNode * tn, FILE * fptr);
+//void postOrderNode(TreeNode * tn, FILE * fptr);
+void postOrder(Tree * tr, char * filename);
+TreeNode* newNode(int data) ;
+int search(int * arr, int strt, int end, int info);
+TreeNode* buildUtil(int * in, int * post, int inStrt, int inEnd, int * pIndex);
+
+#endif
